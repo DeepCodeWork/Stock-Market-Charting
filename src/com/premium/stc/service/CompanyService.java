@@ -22,6 +22,11 @@ public class CompanyService implements CompanyServiceInterface {
 
 	@Override
 	public int deactivateCompanyById(String companyId) {
-		return deactivateCompanyById(companyId);
+		return companyDaoInterface.deactivateCompanyById(companyId);
+	}
+
+	@Override
+	public boolean checkCompany(String companyCode) {
+		return companyDaoInterface.checkCompany(companyCode);
 	}
 }

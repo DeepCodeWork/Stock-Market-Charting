@@ -5,7 +5,6 @@ import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -51,7 +50,6 @@ public class UserController {
 		//ModelAndView mv = new ModelAndView();
 		try {
 			if(!result.hasErrors()) {
-				String appUrl = request.getContextPath();
 				//eventPublisher.publishEvent();
 				int check = userServiceInterface.addOrUpdateUser(userData,1);
 				if(check>0) {

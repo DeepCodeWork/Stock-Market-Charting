@@ -6,4 +6,5 @@ public interface CompanyDaoInterface {
 
 		public int saveOrUpdateCompany(Company company,int index);
 		public int deactivateCompanyById(String companyId);
+		public boolean checkCompany(String companyCode);
 }

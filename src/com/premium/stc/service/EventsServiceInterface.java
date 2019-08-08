@@ -3,9 +3,10 @@ package com.premium.stc.service;
 import java.io.IOException;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
-import org.springframework.web.multipart.MultipartFile;
+
+import com.premium.stc.model.StockPriceDetail;
 
 public interface EventsServiceInterface {
 
-	public void importData(MultipartFile fileAddress) throws IOException,InvalidFormatException;
+	public void importData(StockPriceDetail stockPriceDetail) throws IOException,InvalidFormatException;
 }

@@ -1,5 +1,7 @@
 package com.premium.stc.dao;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -45,6 +47,22 @@ public class CompanyDao implements CompanyDaoInterface {
 			System.out.println(e.getMessage());
 		}
 		return 0;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public boolean checkCompany(String companyCode) {
+		try {
+			Session session = sessionFactory.getCurrentSession();
+			List<Company> companyList = session.createQuery("from Company where compnayCode=?").setParameter(0, companyCode).list();
+			if(companyList.size()!=0&&companyList!=null)
+			{
+				return true;
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return false;
 	}
 
 }

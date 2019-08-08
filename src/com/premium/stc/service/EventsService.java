@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.premium.stc.dao.EventsDaoInterface;
+import com.premium.stc.model.StockPriceDetail;
 
 
 @Service
@@ -19,8 +20,9 @@ public class EventsService implements EventsServiceInterface{
 	@Autowired
 	EventsDaoInterface eventsDaoInterface;
 	@Override
-	public void importData(MultipartFile fileAddress) throws IOException, InvalidFormatException {
-		eventsDaoInterface.importData(fileAddress);
+	public void importData(StockPriceDetail stockPriceDetail) throws IOException, InvalidFormatException {
+		eventsDaoInterface.importData(stockPriceDetail);
 	}
+	
 
 }

@@ -2,6 +2,8 @@ package com.premium.stc.model;
 
 import java.sql.Time;
 import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,6 +20,7 @@ public class StockPriceDetail {
 	private String companyCode;
 	private int stockExchange;
 	private float currentPrice;
+	@Column(name="date", unique =true)
 	private Date date;
 	private Time time;
 	
